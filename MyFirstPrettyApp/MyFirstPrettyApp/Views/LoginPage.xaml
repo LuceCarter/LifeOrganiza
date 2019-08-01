@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyFirstPrettyApp.Views.LoginPage"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#085CA6">
+
+    <Grid>
+        <Image Source="space" Aspect="AspectFill" />
+        <StackLayout Padding="5" VerticalOptions="Center">
+            <Frame CornerRadius="50"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   Margin="15"
+                   IsClippedToBounds="True">
+                <Image Source="monkey" Margin="0"/>
+            </Frame>
+            <Frame BackgroundColor="#085CA6" 
+                   Opacity="0.9"
+                   CornerRadius="20">
+                <StackLayout Padding="5" Margin="5">
+                    <Entry Placeholder="Username..." Text="{Binding UsernameEntryText}" TextColor="White"/>
+                    <Entry Placeholder="Password..." Text="{Binding PasswordEntryText}" IsPassword="true"/>
+                    <Button Text="Login" TextColor="Black" Command="{Binding LoginCommand}" CornerRadius="5" BackgroundColor="White"/>
+                    <Label Text="Login Failed - Please try again." TextColor="Red" IsVisible="{Binding IsLoginFailedVisible}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
